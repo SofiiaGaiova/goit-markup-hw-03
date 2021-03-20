@@ -6,6 +6,7 @@
   --white-color: #ffffff;
   --first-bg-color: #2f303a;
   --second-bg-color: #f5f4fa;
+  --items: 4;
 }
 
 body {
@@ -19,18 +20,77 @@ body {
 
 .link {
   text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
 }
 
 .list {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.grid-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 30px * var(--items)) / var(--items));
 }
 
 /* хедер */
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+}
+
+.header .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 .logo {
   color: var(--logo-color);
   font-family: Raleway, sans-serif;
   font-size: 26px;
   line-height: 1.19;
+  margin-right: 93px;
 }
 
 .half-logo {
@@ -43,6 +103,18 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.site-nav li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav {
+  display: flex;
+}
+.main-nav {
+  display: flex;
+  margin-left: auto;
 }
 
 .site-nav .item:hover,
@@ -61,6 +133,10 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.main-nav li:not(:last-child) {
+  margin-right: 50px;
 }
 
 /* Герой */
@@ -85,23 +161,59 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  padding: 10px 32px;
+  border-radius: 4px;
 }
 
 /* Секции */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 .section-title {
   color: var(--title-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  margin-bottom: 50px;
 }
+
 /* Плюсы компании */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 .features .features-title {
   color: var(--title-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.features-item {
+  --items: 4;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+/* Заняття */
+
+.occupation-item {
+  --items: 3;
 }
 /* Команда */
 .team .team-title {
@@ -109,30 +221,57 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 10px;
 }
 
 .team {
   font-size: 16px;
   line-height: 1.19;
 }
+
+.team-main {
+  background-color: #f5f4fa;
+}
+
+.team-item {
+  --items: 4;
+  text-align: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-part {
+  padding: 30px;
+}
 /* Футер */
 .footer {
   background-color: var(--first-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .footer-logo {
   color: var(--white-color);
 }
 
+.footer-first .logo {
+  margin: 0;
+}
+
 .contacts {
   font-style: normal;
+  margin-top: 20px;
 }
+
 .contacts-address {
   color: var(--white-color);
+  margin-bottom: 9px;
 }
 
 .contacts-nav {
   color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 9px;
 }
 
 .contacts-nav:hover,
@@ -151,13 +290,30 @@ body {
   line-height: 1.87;
 }
 
+.works {
+  --items: 3;
+}
+
 .filter .button {
   background-color: var(--second-bg-color);
   color: var(--title-color);
   font-weight: 500;
+  font-family: inherit;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: none;
+}
+
+.filter {
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.filter-item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .filter .button:hover,
@@ -172,4 +328,9 @@ body {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.works-part {
+  padding: 20px 24px;
 }
