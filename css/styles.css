@@ -16,6 +16,7 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
   line-height: 1.71;
+  margin: 0;
 }
 
 .link {
@@ -42,7 +43,7 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
+  margin: 0;
 }
 
 .list {
@@ -77,6 +78,9 @@ p {
 .header {
   display: flex;
   align-items: center;
+}
+
+.header-main {
   border-bottom: 1px solid #ececec;
 }
 
@@ -142,6 +146,9 @@ p {
 /* Герой */
 .hero {
   background-color: var(--first-bg-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
 }
 
 .hero .title {
@@ -152,6 +159,7 @@ p {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .hero .button {
@@ -239,6 +247,7 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  background-color: var(--white-color);
 }
 
 .team-part {
@@ -333,4 +342,5 @@ p {
 
 .works-part {
   padding: 20px 24px;
+  border: 1px solid rgba(238, 238, 238, 1);
 }
