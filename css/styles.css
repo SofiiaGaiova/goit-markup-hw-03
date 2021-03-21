@@ -342,5 +342,9 @@ p {
 
 .works-part {
   padding: 20px 24px;
+}
+
+.portfolio-item {
+  box-sizing: border-box;
   border: 1px solid rgba(238, 238, 238, 1);
 }
